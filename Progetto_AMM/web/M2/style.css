@@ -8,3 +8,9 @@ and open the template in the editor.
     Author     : Simone Genovesi
 */
 
+body {
+    background-color: #b0c4d3;
+}
+
+p { font-family: "Time New Roman", Times, serif ; }
+
