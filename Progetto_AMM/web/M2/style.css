@@ -9,8 +9,25 @@ and open the template in the editor.
 */
 
 body {
-    background-color: #b0c4d3;
+    background-color: white;
+    font-family: serif;
+    color: black;
 }
 
-p { font-family: "Time New Roman", Times, serif ; }
+h1 {
+    color: yellowgreen;
+    border-bottom: 1px
+    solid black;
+}
 
+h2 {
+    color: black;
+    border-bottom: 1px
+    solid white;
+}
+
+h3 {
+    color: black;
+    border-bottom: 1px
+    solid white;
+}
