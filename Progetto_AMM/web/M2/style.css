@@ -223,16 +223,11 @@ input, textArea{
 .mini{
     margin-right: 5%;
 }
-/* le immagini inserite come pseudo elementi sono immagini puramente decorative
-senza alcun valore semantico. sono state inserite delle immagini decorative
-a fianco al titolo login, lista di persone, lista di gruppi, titolo nella nav.
-le altre immagini, come ad esempio la foto del profilo,
-inserita nel documento html con tag img, hanno valore semantico legato alla bacheca
-del social network */
-h1#Ltitle:before{
+
+h1#log-title:before{
     content: url("img/logo.png");
     margin-right: 1%;
 }
-h1#nb:before{
+h1#nerdbook:before{
     content: url("img/logom.png");
 }
