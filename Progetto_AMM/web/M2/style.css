@@ -11,32 +11,69 @@ and open the template in the editor.
 body {
     background-color: white;
     background-color: grey;
-    font-family: serif;
-    color: black;
+    font-family: "Courier New", monospace;
+    color: rgb(237, 243, 255);
 }
 
-    
+
 p {
     text-align: justify;
+    margin: 1%;
 }
 
 h1, h2, h3 {
-    color: yellowgreen;
-    
+    text-align: left;
+    color: black;
+    font-family: "Courier New"
 }
 
-a:link {
-    text-decoration: underline;
+h1#nerdbook, h1#title{
+    font-weight: bold;
+    font-size: 21px;
+    font-family: "Consolas", monospace;
+    color: rgb(237, 243, 255);
+    margin: 0%;
+    margin-left: 2%;
+}
+h1#nerdbook {
+    float: left;
 }
 
-a:visited {
-    
+nav{
+    background-color: rgb(77, 83, 95);
+    text-align: center;
+    font-size: 21px;
 }
 
-a:hover {
-    
+a:link, a:visited {
+    font-family: "Courier New", monospace;
+    color: rgb(237, 243, 255);
+    text-decoration: none;
 }
 
-a:active {
-    
+a:link:hover{
+    font-weight: bold;
+}
+
+a::after, a::before{
+    content: ' ';
+    white-space: pre;
+}
+input:focus, textArea:focus{
+    background-color: #ffff99;
+}
+
+button{
+    width: 100%;
+    margin-top: 5%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: rgb(77, 83, 95);
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+}
+
+.logout{
+    float: right;
+    margin: 0%;
 }
