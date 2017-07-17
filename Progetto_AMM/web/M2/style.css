@@ -10,24 +10,33 @@ and open the template in the editor.
 
 body {
     background-color: white;
+    background-color: grey;
     font-family: serif;
     color: black;
 }
 
-h1 {
+    
+p {
+    text-align: justify;
+}
+
+h1, h2, h3 {
     color: yellowgreen;
-    border-bottom: 1px
-    solid black;
+    
 }
 
-h2 {
-    color: black;
-    border-bottom: 1px
-    solid white;
+a:link {
+    text-decoration: underline;
 }
 
-h3 {
-    color: black;
-    border-bottom: 1px
-    solid white;
+a:visited {
+    
+}
+
+a:hover {
+    
+}
+
+a:active {
+    
 }
