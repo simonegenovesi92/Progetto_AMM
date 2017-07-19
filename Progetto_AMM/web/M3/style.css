@@ -1,0 +1,346 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-mar-2017, 10.28.53
+    Author     : Simone Genovesi
+*/
+
+/*task 3*/
+body {
+    background-color: #7d99d1;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: seashell;
+    margin: 1%;
+}
+p {
+    text-align: justify;
+    margin: 1%;
+}
+h1, h2, h3 {
+    text-align: left;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #0536bc;
+}
+a:link, a:visited {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: rgb(237, 243, 255);
+    text-decoration: none;
+}
+a:link:hover {
+    font-weight: bold;
+}
+h1#nerdbook, h1#bak-title {
+    font-weight: bold;
+    font-size: 21px;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: rgb(237, 243, 255);
+    margin: 0%;
+    margin-left: 1%;
+}
+h1#nerdbook {
+    float: left;
+}
+nav {
+    background-color: #749ded;
+    text-align: center;
+    font-size: 21px;
+}
+a::after, a::before {
+    content: ' ';
+    white-space: pre;
+}
+li{
+    list-style-type: none;
+}
+input:focus, textArea:focus {
+    background-color: #ffff99;
+}
+button {
+    width: 100%;
+    margin-top: 5%;
+    background-color: whitesmoke;
+    border-radius: 0px;
+    color: grey;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+
+a.logout, h1#nerdbook{
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 21px;
+    color: rgb(237, 243, 255);
+}
+a.logout{
+    font-weight: bold;
+}
+
+img.logout{
+    width: 25px;
+}
+.logout {
+    float: right;
+    margin: 0%;
+}
+/*task 4 e 5*/
+div#post div {
+    margin: 1%;
+    padding: 0.1%;
+    background-color: #b5cdf5;
+    margin-right: 0%;
+    border-radius: 0px;
+}
+
+div#post div label, div#post div a{
+    color: #b5cdf5;
+}
+div#post div.gr, div#post div.gr label{
+    background-color: #4381a5;
+    color: #b5cdf5;
+}
+div#post div#insPost label, div#post div#insPost p, div#post div#insPost a{
+    color: #b5cdf5;
+}
+
+div#dati-prof {
+    margin: 0.7%;
+    background-color: #b5cdf5; 
+    text-align: left;
+    width: 84%;
+    margin-right: 0%;
+    border-radius: 0px;
+}
+div#dati-prof img {
+    float: left;
+    margin: 1%;
+    margin-top: 10%;
+    margin-left: 3.5%;
+}
+div#persone, div#gruppi {
+    margin-top: 0%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: #749ded;
+    border-radius: 0px;
+    padding: 10%;
+}
+label {
+    font-weight: bold;
+    color: whitesmoke;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+div#dati-prof label, div#Login label {
+    margin: 1%;
+    text-align: left;
+    width: 40%;
+}
+div#dati-prof label {
+    display: inline-block;
+}
+div#dati-prof input, div#dati-prof textArea {
+    float: right;
+    width: 50%;
+    margin-top: 0.5%;
+}
+div#Login form, div#dati-prof form {
+    padding: 10%;
+}
+div#Login {
+    width: 30%;
+    background-color: #b5cdf5;
+    margin: auto;
+    border-radius: 0px;
+}
+div#Login input {
+    width: 100%;
+}
+
+div#post div#insPost, div#post div#insPost div{
+    background-color: #b5cdf5;
+}
+
+h1#log-title {
+    text-align: center;
+}
+input, textArea {
+    border-radius: 0px;
+}
+.utente{
+    margin-left: 1%;
+    width: 50px;
+}
+.pic-utente {
+    margin-left: 1%;
+}
+.pic-couple {
+    width: 30%;
+    right: 35%;
+    left: 35%;
+}
+
+.postpic{
+    width: 30%;
+    position: relative;
+    right: 35%;
+    left: 35%;
+}
+
+
+/*task 6*/
+@media only screen and (min-width: 1024px)
+{
+    h1#nerdbook {
+        float: left;
+    }
+    h1#nerdbook, a, h1#bak-title {
+        display: inline-block;
+    }
+    div#post {
+        width: 85%;
+        float: right;
+    }
+    div#dati-prof {
+            float: right;
+            margin-top: 1%;
+    }
+    div#lat { /*sidebar*/
+        width: 15%;
+        margin-top: 0.7%;
+        float: left;
+    }
+    
+    div#insPost{
+        border-radius: 5px;
+        margin-top: 0.7%;
+    }
+    div#insPost > form{
+        padding-right: 30%;
+        padding-left: 30%;
+        padding-bottom: 1%;
+    }
+    .tipoi{
+        
+    }
+    .tipou{
+        
+    }
+    div.tipou{
+        float: right;
+        display: inline-block;
+    }
+    div.tipoi{
+        display: inline-block;
+    }
+    div#conferma{
+        float: right;
+    }
+}
+
+.post{
+    width: 49%;
+    display: inline-block;
+}
+div#conferma{
+    margin-top: 0.9%;
+    width: 84%;
+    background-color: #b5cdf5;
+    border-radius: 5px;
+}
+div#conferma p.dati, div#conferma div{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+strong{
+    font-family: "Open Sans", Arial, sans-serif;
+}
+img#profilo{
+    display: block;
+    margin-top: 1%;
+    width: 50px;
+}
+div#conferma div{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+div#errati{
+    padding-bottom: 5%;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 1024px)
+{
+    div#conferma{
+        margin: auto;
+    }
+    .logout{
+        display: none;
+    }
+    div#insPost > form{
+        padding: 5%;
+    }
+    div#post {
+        width: 85%;
+        margin: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    div#post div {
+        margin: 0.5%;
+        margin-top: 1%;
+    }
+    div#lat, div#insPost{
+        margin: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        background-color: rgb(77, 83, 95);
+        border-radius: 5px;
+    }
+    div#lat {
+        width: 84%;
+    }
+    div#persone, div#gruppi {
+        margin-bottom: 1%;
+        padding: 0.5%;
+        width: 30%;
+        display: inline-block;
+        background: none;
+    }
+    div#dati-prof {
+        margin: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    h1#nerdbook, h1#bak-title, div#dati-prof img { 
+        display: none;
+    }
+    div#dati-prof form {
+        padding: 1%;
+    }
+    div#gruppi {
+        position: relative;
+        right: 10%;
+        float: right;
+    }
+    div#persone {
+        position: relative;
+        left: 10%;
+    }
+    div#lat h2 {
+        text-align: center;
+    }
+}
+.icon-pic {
+    margin-right: 5%;
+}
+div#insPost div{
+    margin: 1%;
+}
+div#insPost input[type="url"], div#insPost textArea{
+    width: 100%;
+}
+div#lat a, div#post a{
+    font-family: "Open Sans", Arial, sans-serif;
+}
