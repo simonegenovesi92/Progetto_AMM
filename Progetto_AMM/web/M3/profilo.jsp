@@ -41,7 +41,7 @@
                 <p class="dati"><strong>Cognome:</strong> ${user.getCognome()}</p>
                 <p class="dati"><strong>Nato/a il:</strong> ${user.getDataNascita()}</p>
                 <p class="dati"><strong>Indirizzo dell'immagine del profilo:</strong> ${user.getUrlAvatar()}<img class="pic-utente,utente" id="profilo" alt="Profilo" src="${user.getUrlAvatar()}"></p>
-                <p class="dati"><strong>Frase di presentazione:</strong> ${user.getFraseBio()}</p>
+                <p class="dati"><strong>Frase di presentazione:</strong> ${user.getAbout()}</p>
             </div>
         </div>
         </c:if>

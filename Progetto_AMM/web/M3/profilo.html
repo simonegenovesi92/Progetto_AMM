@@ -47,37 +47,30 @@
             <div>
                 <img src="img/utente_default.png" alt="utente" width="50" height="50" id="utente">
             </div>
-            <form action="profilo.html">
+            <form action="Profilo" method="post">
                 <div>
-                    <label>Nome</label>
-                    <input type="text"/> 
+                    <label for="nome">Nome</label> <input type='text' name="nome" id="nome">
                 </div>
                 <div>
-                    <label>Cognome</label>
-                    <input type="text"/> 
+                    <label for="cognome">Cognome</label><input type='text' name="cognome" id="cognome">
                 </div>
                 <div>
-                    <label>Indirizzo dell'immagine del profilo</label>
-                    <input type="url"/> 
+                    <label for="foto">Indirizzo dell'immagine del profilo</label> <input type='url' name="foto" id="foto">
                 </div>
                 <div>
-                    <label>Frase di presentazione</label>
-                    <textarea rows="1">Parla di te.</textarea>
+                    <label for="stato">Frase di presentazione</label> <textarea name="stato" rows="1" id="stato" placeholder="Su di te..."></textarea>
                 </div>
                 <div>
-                    <label>Nato/a il</label>
-                    <input type="date"/> 
+                    <label for="compleanno">Nato/a il</label> <input type='date' name="compleanno" id="compleanno">
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input type="password"/>
+                    <label for="password">Password</label> <input type='password' name="password" id ="password">
                 </div>
                 <div>
-                    <label>Conferma password</label>
-                    <input type="password"/>
+                    <label for="confpassword">Conferma password</label><input type='password' name="confpassword" id="confpassword">
                 </div>
                 <div>
-                <button type="submit">Aggiorna</button>
+                    <button type="submit" value="profilo">Aggiorna</button>
                 </div>
             </form>
         </div>       

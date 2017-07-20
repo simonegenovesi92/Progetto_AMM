@@ -35,8 +35,8 @@
                 </div>
                 </c:if>
                 <div>
-                    <label for="utente">Nome Utente</label>
-                    <input name="utente" id="utente" type="text"/> 
+                    <label for="nomeutente">Nome Utente</label>
+                    <input name="user" id="nomeutente" type="text"/> 
                 </div>
                 <div>
                     <label for="password">Password</label>

@@ -79,7 +79,7 @@ public class PostFactory {
         post6.setContenuto("Benvenuti al Presidium, posso essere la vostra guida?");
         post6.setTipologia(Post.TipoPost.TESTO);
         post6.setId(6);
-        post6.setGruppo(GruppiFactory.getInstance().getGroupByName("Gruppo 3")); 
+        post6.setGruppo(GruppiFactory.getInstance().getGroupByName("Gruppo 2")); 
         post6.setDestinatario(null);
         post6.setAllegato(null);
         

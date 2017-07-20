@@ -40,17 +40,9 @@ public class GruppiFactory {
         gruppo2.setAdmin(UtentiRegistratiFactory.getInstance().getUserByName("Francesca"));
         gruppo2.setId(2);
         gruppo2.setUrlAvatar("img/group.gif");
-        
-        Gruppi gruppo3 = new Gruppi();
-        gruppo3.setNome("Gruppo 3");
-        gruppo3.setDescrizione("Descrizione 3");
-        gruppo3.setAdmin(UtentiRegistratiFactory.getInstance().getUserByName("Ferdinando"));
-        gruppo3.setId(3);
-        gruppo3.setUrlAvatar("img/group.gif");
         //aggiunta degli utenti
         gruppi.add(gruppo1);
         gruppi.add(gruppo2);
-        gruppi.add(gruppo3);
     }
     public Gruppi getGroupById(int id)
     {
