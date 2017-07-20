@@ -76,7 +76,7 @@ public class PostFactory {
         
         Post post6 = new Post();
         post6.setAutore(UtentiRegistratiFactory.getInstance().getUserByName("Ferdinando"));
-        post6.setContenuto("Benvenuti al Presidium, posso essere la vostra guida?");
+        post6.setContenuto("Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.");
         post6.setTipologia(Post.TipoPost.TESTO);
         post6.setId(6);
         post6.setGruppo(GruppiFactory.getInstance().getGroupByName("Gruppo 2")); 
@@ -121,29 +121,30 @@ public class PostFactory {
         }
         return null;
     }
-    public List getPostByUser(UtentiRegistrati u)
+    public List getPostByUser(UtentiRegistrati register)
     {
         List<Post> l = new ArrayList<Post>();
         
         for(Post elemento:post)
             if(elemento.getDestinatario() == null)
-                if(elemento.getAutore().equals(u))
-                    l.add(elemento);
+                if(elemento.getAutore() != null)
+                    if(elemento.getAutore().equals(register))
+                        l.add(elemento);
         return l;
     }
-    public List getPostByDest(UtentiRegistrati u)
+    public List getPostByDest(UtentiRegistrati register)
     {
-        List<Post> l = getPostByUser(u);
+        List<Post> l = getPostByUser(register);
         if(l == null)
             l = new ArrayList<Post>();
         
         for(Post elemento:post)
             if(elemento.getDestinatario() != null)
-                if(elemento.getDestinatario().equals(u))
+                if(elemento.getDestinatario().equals(register))
                     l.add(elemento);
         return l;
     }
-    public List getPostByGroup(Gruppi g)
+    public List getPostByGroup(Gruppi group)
     {
          List<Post> l = new ArrayList<Post>();
         
@@ -151,7 +152,7 @@ public class PostFactory {
         {
             if(elemento.getGruppo() != null)
             {
-                if(elemento.getGruppo().equals(g))
+                if(elemento.getGruppo().equals(group))
                     l.add(elemento);
             }
         }

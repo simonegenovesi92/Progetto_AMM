@@ -47,20 +47,20 @@ public class GruppiFactory {
     public Gruppi getGroupById(int id)
     {
         
-        for(Gruppi g : this.gruppi)
+        for(Gruppi group : this.gruppi)
         {
-            if(g.getId() == id)
-                return g;
+            if(group.getId() == id)
+                return group;
         }
         return null;
         
     }
     public Gruppi getGroupByName(String n)
     {
-        for(Gruppi g : this.gruppi)
+        for(Gruppi group : this.gruppi)
         {
-            if(g.getNome().equals(n))
-                return g;
+            if(group.getNome().equals(n))
+                return group;
         }
         return null;
     }

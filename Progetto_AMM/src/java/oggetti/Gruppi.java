@@ -115,10 +115,10 @@ public class Gruppi {
     }
     
     @Override
-    public boolean equals(Object g) {
-        if(g == null) return false;
-        if (g instanceof Gruppi)
-            if (this.getId() == ((Gruppi)g).getId()) return true;
+    public boolean equals(Object group) {
+        if(group == null) return false;
+        if (group instanceof Gruppi)
+            if (this.getId() == ((Gruppi)group).getId()) return true;
         return false;
     }
 }

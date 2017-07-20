@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers loggato Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and open the template loggato the editor.
  */
 package servlet;
 
@@ -39,47 +39,47 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         if(request.getParameter("logout") != null)
         {
-            HttpSession session = request.getSession(false);
+            HttpSession sessione = request.getSession(false);
             if(request.getParameter("logout").equals("1"))
             {
-                session.invalidate();
+                sessione.invalidate();
             }
         }
-        HttpSession session = request.getSession();
-        String utente = request.getParameter("user");
+        HttpSession sessione = request.getSession();
+        String utente = request.getParameter("utente");
         String password = request.getParameter("password");
         if(utente == null || password == null)
             request.getRequestDispatcher("login.jsp").forward(request, response);
         if(utente != null)
         {
-            UtentiRegistrati u = UtentiRegistratiFactory.getInstance().getUserByName(utente);
-            if(u != null)
+            UtentiRegistrati register = UtentiRegistratiFactory.getInstance().getUserByName(utente);
+            if(register != null)
             {
-                if(u.getNome().equals(utente) && u.getPassword().equals(password))
+                if(register.getNome().equals(utente) && register.getPassword().equals(password))
                 {
-                    session.setAttribute("in",true);
-                    session.setAttribute("user",u); 
-                    session.setAttribute("x",u);
-                    if(u.getNome() == null || u.getUrlAvatar() == null || u.getCognome() == null || u.getAbout() == null)
+                    sessione.setAttribute("loggato",true);
+                    sessione.setAttribute("utente",register); 
+                    sessione.setAttribute("sessione",register);
+                    if(register.getNome() == null || register.getUrlAvatar() == null || register.getCognome() == null || register.getAbout() == null)
                         response.sendRedirect("profilo.html");
                     else
                     {
-                        List<Post> p = PostFactory.getInstance().getPostByUser(u);
-                        session.setAttribute("post", p);
+                        List<Post> p = PostFactory.getInstance().getPostByUser(register);
+                        sessione.setAttribute("post", p);
                         response.sendRedirect("bacheca.html");
                     }
                 }
                 else
                 {
-                    request.setAttribute("errore", true);
-                    session.setAttribute("in",false);
+                    request.setAttribute("error", true);
+                    sessione.setAttribute("loggato",false);
                     request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
             }
             else
             {
-                request.setAttribute("errore", true);
-                session.setAttribute("in",false);
+                request.setAttribute("error", true);
+                sessione.setAttribute("loggato",false);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }

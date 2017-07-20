@@ -25,10 +25,8 @@
         </header>
         
         <div>
-            <ul>
-		<li><a href="#descrizione">La descrizione.</a></li>
-                <li><a href="#iscrizione">Come iscrviersi.</a></li>
-            </ul>
+            <a href="#descrizione">La descrizione.</a>
+            <a href="#iscrizione">Come iscrviersi.</a>
         </div>
         
         <div id="descrizione">

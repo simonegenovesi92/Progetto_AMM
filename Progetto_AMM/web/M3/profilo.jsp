@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <c:if test="${negato == false}">
+        <c:if test="${anegativo == false}">
             <title>Profilo NerdBook</title>
         </c:if>
-        <c:if test="${negato == true}">
+        <c:if test="${anegativo == true}">
             <title>Accesso negato</title>
         </c:if>
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
-        <c:if test="${negato == false}">
+        <c:if test="${anegativo == false}">
         <header>
             <nav>
                 <c:set var="t" value="Profilo" scope="request"></c:set>
@@ -31,22 +31,22 @@
         </header>
         <jsp:include page="lateral.jsp"/>
         <c:if test = "${erroredati == false}">
-        <div id="conferma">
+        <div id="conf">
             <div>
-                <h2>Conferma inserimento dati NerdBook</h2>
-                <p>Dati inseriti correttamente!</p>
+                <h2>Conferma inserimento dei dati</h2>
+                <p>Dati inseriti!</p>
             </div>
             <div>
-                <p class="dati"><strong>Nome:</strong> ${user.getNome()}</p>
-                <p class="dati"><strong>Cognome:</strong> ${user.getCognome()}</p>
-                <p class="dati"><strong>Nato/a il:</strong> ${user.getDataNascita()}</p>
-                <p class="dati"><strong>Indirizzo dell'immagine del profilo:</strong> ${user.getUrlAvatar()}<img class="pic-utente,utente" id="profilo" alt="Profilo" src="${user.getUrlAvatar()}"></p>
-                <p class="dati"><strong>Frase di presentazione:</strong> ${user.getAbout()}</p>
+                <p class="dati"><strong>Nome:</strong> ${utente.getNome()}</p>
+                <p class="dati"><strong>Cognome:</strong> ${utente.getCognome()}</p>
+                <p class="dati"><strong>Nato/a il:</strong> ${utente.getDataNascita()}</p>
+                <p class="dati"><strong>Indirizzo dell'immagine del profilo:</strong> ${utente.getUrlAvatar()}<img class="pic-utente,utente" id="profilo" alt="Profilo" src="${utente.getUrlAvatar()}"></p>
+                <p class="dati"><strong>Frase di presentazione:</strong> ${utente.getAbout()}</p>
             </div>
         </div>
         </c:if>
         <c:if test="${erroredati == true}">
-            <div id="conferma">
+            <div id="conf">
                 <div><h2>Errore nell'inserimento dei dati</h2>
                 <p>Le due password inserite non corrispondono.</p></div>
             </div>
@@ -54,7 +54,7 @@
         <c:if test="${erroredati == null}">
         <div id="info">
             <div>
-                <img src="${user.getUrlAvatar()}" alt="utente" id="utente">
+                <img src="${utente.getUrlAvatar()}" alt="utente" id="utente">
             </div>
             <form action="" method="post">
                 <div>
@@ -85,7 +85,7 @@
         </div>
         </c:if>
         </c:if>
-        <c:if test="${negato == true}">
+        <c:if test="${anegativo == true}">
             <h1>Accesso negato</h1>
             <p>Autorizzazioni insufficienti per accedere alla pagina.</p>
         </c:if>

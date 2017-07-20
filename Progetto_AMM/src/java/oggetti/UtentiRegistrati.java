@@ -183,10 +183,10 @@ public class UtentiRegistrati {
     }
     
     @Override
-    public boolean equals(Object u) {
-        if(u == null) return false;
-        if (u instanceof UtentiRegistrati)
-            if (this.getId() == ((UtentiRegistrati)u).getId()) return true;
+    public boolean equals(Object register) {
+        if(register == null) return false;
+        if (register instanceof UtentiRegistrati)
+            if (this.getId() == ((UtentiRegistrati)register).getId()) return true;
         return false;
     }
 }

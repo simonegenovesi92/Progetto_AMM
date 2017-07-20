@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers loggato Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and open the template loggato the editor.
  */
 package servlet;
 
@@ -37,24 +37,24 @@ public class Profilo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        Object r = session.getAttribute("in");
-        if(r != null)
+        HttpSession sessione = request.getSession();
+        Object reg = sessione.getAttribute("loggato");
+        if(reg != null)
         {
-            boolean flag = (boolean)r;
+            boolean flag = (boolean)reg;
             if(!flag)
             {
-                request.setAttribute("negato",true);
+                request.setAttribute("anegato",true);
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
             }
             else
             {
-                request.setAttribute("negato",false);
+                request.setAttribute("anegato",false);
                 List<UtentiRegistrati> l = UtentiRegistratiFactory.getInstance().getUserList();
-                session.setAttribute("utenti", l);
-                List<Gruppi> g = GruppiFactory.getInstance().getGroupList();
-                session.setAttribute("gruppi", g);
-                UtentiRegistrati u = (UtentiRegistrati)session.getAttribute("user");
+                sessione.setAttribute("utenti", l);
+                List<Gruppi> group = GruppiFactory.getInstance().getGroupList();
+                sessione.setAttribute("gruppi", group);
+                UtentiRegistrati register = (UtentiRegistrati)sessione.getAttribute("utente");
                 String nome = request.getParameter("nome");
                 String cognome = request.getParameter("cognome");
                 String stato = request.getParameter("stato");
@@ -66,7 +66,7 @@ public class Profilo extends HttpServlet {
                 {
                     if(!nome.equals(""))
                     {
-                        u.setNome(nome);
+                        register.setNome(nome);
                         request.setAttribute("erroredati", false);
                     }
                 }
@@ -74,7 +74,7 @@ public class Profilo extends HttpServlet {
                 {
                     if(!cognome.equals(""))
                     {
-                        u.setCognome(cognome);
+                        register.setCognome(cognome);
                         request.setAttribute("erroredati", false);
                     }
                 }
@@ -82,7 +82,7 @@ public class Profilo extends HttpServlet {
                 {
                     if(!stato.equals(""))
                     {
-                        u.setAbout(stato);
+                        register.setAbout(stato);
                         request.setAttribute("erroredati", false);
                     }
                 }
@@ -90,7 +90,7 @@ public class Profilo extends HttpServlet {
                 {
                     if(!compleanno.equals(""))
                     {
-                        u.setDataNascita(compleanno);
+                        register.setDataNascita(compleanno);
                         request.setAttribute("erroredati", false);
                     }
                 }
@@ -98,7 +98,7 @@ public class Profilo extends HttpServlet {
                 {
                     if(!foto.equals(""))
                     {
-                        u.setUrlAvatar(foto);
+                        register.setUrlAvatar(foto);
                         request.setAttribute("erroredati", false);
                     }
                 }
@@ -110,7 +110,7 @@ public class Profilo extends HttpServlet {
                         {
                             if (!(password.equals("")))
                             {
-                                u.setPassword(password);
+                                register.setPassword(password);
                                 request.setAttribute("erroredati", false);
                             }
                         }
@@ -123,7 +123,7 @@ public class Profilo extends HttpServlet {
         }
         else
         {
-            request.setAttribute("negato",true);
+            request.setAttribute("anegato",true);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
     }

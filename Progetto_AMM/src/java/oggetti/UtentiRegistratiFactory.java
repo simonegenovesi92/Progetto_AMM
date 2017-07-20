@@ -75,19 +75,19 @@ public class UtentiRegistratiFactory {
     public UtentiRegistrati getUserById(int id)
     {
         
-        for(UtentiRegistrati u : this.utenti)
+        for(UtentiRegistrati register : this.utenti)
         {
-            if(u.getId() == id)
-                return u;
+            if(register.getId() == id)
+                return register;
         }
         return null;
     }
     public UtentiRegistrati getUserByName(String n)
     {
-        for(UtentiRegistrati u : this.utenti)
+        for(UtentiRegistrati register : this.utenti)
         {
-            if(u.getNome().equals(n))
-                return u;
+            if(register.getNome().equals(n))
+                return register;
         }
         return null;
     }

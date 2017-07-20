@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers loggato Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and open the template loggato the editor.
  */
 package servlet;
 
@@ -40,42 +40,42 @@ public class Bacheca extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        HttpSession session = request.getSession();
+        HttpSession sessione = request.getSession();
         
-        Object in = session.getAttribute("in");
-        if(in != null)
+        Object loggato = sessione.getAttribute("loggato");
+        if(loggato != null)
         {
-            boolean flag = (boolean)in;
+            boolean flag = (boolean)loggato;
             if(!flag)
             {
-                request.setAttribute("negato",true);
+                request.setAttribute("anegativo",true);
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
             }
             else
             {
-                in = session.getAttribute("user");
-                request.setAttribute("negato",false);
+                loggato = sessione.getAttribute("utente");
+                request.setAttribute("anegativo",false);
                 
                 List<UtentiRegistrati> lu = UtentiRegistratiFactory.getInstance().getUserList();
-                session.setAttribute("utenti", lu);
+                sessione.setAttribute("utenti", lu);
                 List<Gruppi> lg = GruppiFactory.getInstance().getGroupList();
-                session.setAttribute("gruppi", lg);
+                sessione.setAttribute("gruppi", lg);
                 
-                Object vb = request.getParameter("visualizza_bacheca"); //utente del quale si vuole visualizzare la bacheca
-                Object vg = request.getParameter("visualizza_gruppo");
-                UtentiRegistrati u;
-                Gruppi g;
+                Object vb = request.getParameter("visual-bak"); //utente del quale si vuole visualizzare la bacheca
+                Object vg = request.getParameter("visual-group");
+                UtentiRegistrati register;
+                Gruppi group;
                 
                 if(vg != null)
                 {
                     
                     String n = vg.toString();
-                    g = GruppiFactory.getInstance().getGroupByName(n);
-                    if(g != null)
+                    group = GruppiFactory.getInstance().getGroupByName(n);
+                    if(group != null)
                     {
-                        request.setAttribute("x", g);
+                        request.setAttribute("session", group);
                         
-                        List<Post> p = PostFactory.getInstance().getPostByGroup(g);
+                        List<Post> p = PostFactory.getInstance().getPostByGroup(group);
                         if(p != null)
                             request.setAttribute("post", p);
                     }
@@ -83,21 +83,21 @@ public class Bacheca extends HttpServlet {
                 else if(vb != null)
                 {
                     
-                    request.setAttribute("f",true);
+                    request.setAttribute("vis",true);
                     String n = vb.toString();
-                    u = UtentiRegistratiFactory.getInstance().getUserByName(n);
-                    request.setAttribute("x", u);
-                    List<Post> p = PostFactory.getInstance().getPostByDest(u);
+                    register = UtentiRegistratiFactory.getInstance().getUserByName(n);
+                    request.setAttribute("session", register);
+                    List<Post> p = PostFactory.getInstance().getPostByDest(register);
                     if(p != null)
                         request.setAttribute("post", p);
                 }
                 else
                 
                 {
-                    request.setAttribute("f",true);
-                    u = (UtentiRegistrati)in;
-                    request.setAttribute("x", u);
-                    List<Post> p = PostFactory.getInstance().getPostByDest(u);
+                    request.setAttribute("vis",true);
+                    register = (UtentiRegistrati)loggato;
+                    request.setAttribute("session", register);
+                    List<Post> p = PostFactory.getInstance().getPostByDest(register);
                     if(p != null)
                         request.setAttribute("post", p);
                 }
@@ -111,24 +111,24 @@ public class Bacheca extends HttpServlet {
                     
                     if(radio != null)
                     {
-                        if(radio.equals("imm"))
+                        if(radio.equals("immagine"))
                         {
                             if(allegato != null)
                             {
                                 if (!(allegato.equals("")))
                                 {
-                                    request.setAttribute("multimedia",1);
+                                    request.setAttribute("medias",1);
                                     tipo = Post.TipoPost.IMMAGINE;
-                                    request.setAttribute("erroretipo", false);
-                                    request.setAttribute("inspost", true);
+                                    request.setAttribute("t_errore", false);
+                                    request.setAttribute("insert", true);
                                 }
                                 else
-                                    request.setAttribute("erroretipo", true);
+                                    request.setAttribute("t_errore", true);
                                     
                             }
                             else
                             {
-                                request.setAttribute("erroretipo", true);
+                                request.setAttribute("t_errore", true);
                             }
                         }
                         else if(radio.equals("url"))
@@ -137,18 +137,18 @@ public class Bacheca extends HttpServlet {
                             {
                                 if (!(allegato.equals("")))
                                 {
-                                    request.setAttribute("multimedia", 2);
+                                    request.setAttribute("medias", 2);
                                     tipo = Post.TipoPost.URL;
-                                    request.setAttribute("erroretipo", false);
-                                    request.setAttribute("inspost", true);
+                                    request.setAttribute("t_errore", false);
+                                    request.setAttribute("insert", true);
                                 }
                                 else
-                                    request.setAttribute("erroretipo", true);
+                                    request.setAttribute("t_errore", true);
                                     
                             }
                             else
                             {
-                                request.setAttribute("erroretipo", true);
+                                request.setAttribute("t_errore", true);
                             }
                         }
                     }
@@ -156,8 +156,8 @@ public class Bacheca extends HttpServlet {
                     {
                         if(!testo.equals(""))
                         {
-                            request.setAttribute("inspost", true);
-                            request.setAttribute("erroretipo", false);
+                            request.setAttribute("insert", true);
+                            request.setAttribute("t_errore", false);
                             tipo = Post.TipoPost.TESTO;
                         }
                     }
@@ -165,22 +165,22 @@ public class Bacheca extends HttpServlet {
                     {
                         if(tipo == null)
                         {
-                            request.setAttribute("erroretipo", true);
-                            request.setAttribute("inspost", false);
+                            request.setAttribute("t_errore", true);
+                            request.setAttribute("insert", false);
                         }                        
                     }
-                    if(request.getAttribute("erroretipo") != null)
+                    if(request.getAttribute("t_errore") != null)
                     {
-                        if(!(boolean)request.getAttribute("erroretipo"))
+                        if(!(boolean)request.getAttribute("t_errore"))
                         {
-                            request.setAttribute("inspost", true);
+                            request.setAttribute("insert", true);
                             
                             Post n = new Post();
-                            n.setAutore((UtentiRegistrati)session.getAttribute("user"));
+                            n.setAutore((UtentiRegistrati)sessione.getAttribute("utente"));
                             if(vb != null)
                                 n.setDestinatario(UtentiRegistratiFactory.getInstance().getUserByName(vb.toString()));
                             else 
-                                n.setDestinatario((UtentiRegistrati)session.getAttribute("user"));
+                                n.setDestinatario((UtentiRegistrati)sessione.getAttribute("utente"));
                             if(vg != null)
                                 n.setGruppo(GruppiFactory.getInstance().getGroupByName(vg.toString()));
                             n.setTipologia(tipo);
@@ -192,17 +192,17 @@ public class Bacheca extends HttpServlet {
                         }
                     }
                 }
-                if(request.getParameter("conferma") != null)
+                if(request.getParameter("conf") != null)
                 {
-                    if((request.getParameter("conferma").equals("true")))
-                        request.setAttribute("conferma", true);
+                    if((request.getParameter("conf").equals("true")))
+                        request.setAttribute("conf", true);
                 }
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
             }
         }
         else
         {
-            request.setAttribute("negato",true);
+            request.setAttribute("anegativo",true);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
     }

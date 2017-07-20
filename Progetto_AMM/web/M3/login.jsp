@@ -29,14 +29,15 @@
         <div id="Login">
             <form method="post" action="login.html">
                 <c:if test="${errore == true}">
-                <div id="errati">
-                     <h2>Errore login</h2>
-                     <p>Nome utente o password sono errati.</p>
-                </div>
+                    <div id="sbagliati">
+                        <h2>Qualcosa è andato storto...</h2>
+                        <p>Forse hai sbagliato il nome utente o la password</p>
+                        <p>o forse anche tutti e due!</p>
+                    </div>
                 </c:if>
                 <div>
-                    <label for="nomeutente">Nome Utente</label>
-                    <input name="user" id="nomeutente" type="text"/> 
+                    <label for="utente">Nome Utente</label>
+                    <input name="utente" id="utente" type="text"/> 
                 </div>
                 <div>
                     <label for="password">Password</label>

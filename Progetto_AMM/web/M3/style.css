@@ -12,7 +12,7 @@ and open the template in the editor.
 body {
     background-color: #7d99d1;
     font-family: "Open Sans", Arial, sans-serif;
-    color: seashell;
+    color: white;
     margin: 1%;
 }
 p {
@@ -100,8 +100,8 @@ div#post div.gr, div#post div.gr label{
     background-color: #4381a5;
     color: #b5cdf5;
 }
-div#post div#insPost label, div#post div#insPost p, div#post div#insPost a{
-    color: #b5cdf5;
+div#post div#inserT label, div#post div#inserT p, div#post div#inserT a{
+    color: white;
 }
 
 div#dati-prof {
@@ -158,7 +158,7 @@ div#Login input {
     width: 100%;
 }
 
-div#post div#insPost, div#post div#insPost div{
+div#post, div#post{
     background-color: #b5cdf5;
 }
 
@@ -212,29 +212,14 @@ input, textArea {
         float: left;
     }
     
-    div#insPost{
-        border-radius: 5px;
-        margin-top: 0.7%;
-    }
-    div#insPost > form{
-        padding-right: 30%;
-        padding-left: 30%;
-        padding-bottom: 1%;
-    }
-    .tipoi{
-        
-    }
-    .tipou{
-        
-    }
-    div.tipou{
+    div.divlink{
         float: right;
         display: inline-block;
     }
-    div.tipoi{
+    div.divimm{
         display: inline-block;
     }
-    div#conferma{
+    div#conf{
         float: right;
     }
 }
@@ -243,13 +228,13 @@ input, textArea {
     width: 49%;
     display: inline-block;
 }
-div#conferma{
+div#conf{
     margin-top: 0.9%;
     width: 84%;
     background-color: #b5cdf5;
     border-radius: 5px;
 }
-div#conferma p.dati, div#conferma div{
+div#conf p.dati, div#conf div{
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -261,24 +246,24 @@ img#profilo{
     margin-top: 1%;
     width: 50px;
 }
-div#conferma div{
+div#conf div{
     padding-top: 1%;
     padding-bottom: 1%;
 }
-div#errati{
+div#sbagliati{
     padding-bottom: 5%;
 }
 
 
 @media only screen and (min-width: 0px) and (max-width: 1024px)
 {
-    div#conferma{
+    div#conf{
         margin: auto;
     }
     .logout{
         display: none;
     }
-    div#insPost > form{
+    div#inserT > form{
         padding: 5%;
     }
     div#post {
@@ -286,17 +271,20 @@ div#errati{
         margin: auto;
         margin-top: 1%;
         margin-bottom: 1%;
+        color: white;
     }
     div#post div {
         margin: 0.5%;
         margin-top: 1%;
+        color: white;
     }
-    div#lat, div#insPost{
+    div#lat, div#inserT{
         margin: auto;
         margin-top: 1%;
         margin-bottom: 1%;
         background-color: rgb(77, 83, 95);
         border-radius: 5px;
+        color: white;
     }
     div#lat {
         width: 84%;
@@ -335,11 +323,13 @@ div#errati{
 .icon-pic {
     margin-right: 5%;
 }
-div#insPost div{
+div#inserT div{
     margin: 1%;
+    color: white;
 }
-div#insPost input[type="url"], div#insPost textArea{
+div#inserT input[type="url"], div#inserT textArea{
     width: 100%;
+    color: white;
 }
 div#lat a, div#post a{
     font-family: "Open Sans", Arial, sans-serif;
